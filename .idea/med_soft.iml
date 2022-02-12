@@ -12,6 +12,7 @@
       <list>
         <option value="$MODULE_DIR$/med_app/models" />
         <option value="$MODULE_DIR$/med_app/auth" />
+        <option value="$MODULE_DIR$/med_app/view" />
       </list>
     </option>
   </component>

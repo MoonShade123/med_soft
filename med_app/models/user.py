@@ -23,7 +23,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         blank=False
         )
 
-    phone_number = PhoneNumberField()
+    phone_number = PhoneNumberField(blank=True)
 
     is_staff = models.BooleanField(default=False)
 
