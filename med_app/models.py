@@ -1,3 +1,3 @@
-from django.db import models
-
-# Create your models here.
+from .models import User
+from .models import Profile
+from .models import Blood
