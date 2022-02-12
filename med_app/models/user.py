@@ -25,6 +25,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     phone_number = PhoneNumberField(blank=True)
 
+    last_login = models.DateTimeField(auto_now_add=True)
+
     is_staff = models.BooleanField(default=False)
 
     is_active = models.BooleanField(default=True)

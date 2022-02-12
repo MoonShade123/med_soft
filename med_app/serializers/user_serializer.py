@@ -6,7 +6,7 @@ from med_app.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'phone_number', 'is_active')
+        fields = ('id', 'username', 'email', 'phone_number', 'last_login', 'is_active')
 
 
 class UserListSerializer(serializers.ListSerializer):
