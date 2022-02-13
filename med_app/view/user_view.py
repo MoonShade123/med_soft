@@ -35,20 +35,20 @@ class UserAPIView(GenericAPIView):
 
         user = request.user
         updating_user = request.data
-        for i in updating_user:
-            if i == 'username' is not None:
+        for key in updating_user:
+            if key == 'username' is not None:
                 saved_user.username = updating_user['username']
             else:
                 saved_user.username = user.username
-            if i == 'email' is not None:
+            if key == 'email' is not None:
                 saved_user.email = updating_user['email']
             else:
                 saved_user.email = user.email
-            if i == 'password' is not None:
+            if key == 'password' is not None:
                 saved_user.password = updating_user['password']
             else:
                 saved_user.password = user.password
-            if i == 'phone_number' is not None:
+            if key == 'phone_number' is not None:
                 saved_user.phone_number = updating_user['phone_number']
             else:
                 saved_user.phone_number = user.phone_number

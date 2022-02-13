@@ -11,15 +11,28 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True
     )
+
+    NEUTRAL = 'N'
+    MALE = 'M'
+    FEMALE = 'F'
+    SEX_CHOICES = (
+        (NEUTRAL, 'Neutral'),
+        (MALE, 'Male'),
+        (FEMALE, 'Female'),
+    )
+
     name = models.CharField(max_length=25, blank=False)
     surname = models.CharField(max_length=30, blank=False)
     middle_name = models.CharField(max_length=25, blank=True)
     birth_date = models.DateField(blank=False)
-    weight = models.IntegerField(blank=False)
-    height = models.IntegerField(blank=False)
+    weight = models.CharField(blank=False, max_length=3)
+    height = models.CharField(blank=False, max_length=3)
     country = models.CharField(blank=True, max_length=25)
     med_insurance = models.BooleanField(default=False)
-    sex = models.CharField(blank=False, max_length=20, default='Unknown')
+    sex = models.CharField(max_length=1,
+                           choices=SEX_CHOICES,
+                           default=NEUTRAL
+                           )
 
     def __str__(self):
         return self.name
