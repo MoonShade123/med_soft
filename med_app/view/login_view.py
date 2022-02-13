@@ -1,12 +1,12 @@
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.generics import GenericAPIView
 
 from med_app.serializers import LoginSerializer
 
 
-class LoginAPIView(APIView):
+class LoginAPIView(GenericAPIView):
     """
     Logs in an existing user.
     """
