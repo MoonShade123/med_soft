@@ -56,7 +56,7 @@ class UserAPIView(GenericAPIView):
         saved_user.save()
 
         serializer = UserSerializer(saved_user)
-        return Response({f"User with Id:{saved_user.id} updated successfully": serializer.data})
+        return Response({f"User with Id:{user_id} updated successfully": serializer.data})
 
     def delete(self, request):
         user_id = request.user.id
@@ -64,4 +64,4 @@ class UserAPIView(GenericAPIView):
 
         user.delete()
 
-        return Response(f"User with Id:{id} deleted successfully")
+        return Response(f"User with Id:{user_id} deleted successfully")

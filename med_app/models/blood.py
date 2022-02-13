@@ -13,3 +13,6 @@ class Blood(models.Model):
     reticulocytes = models.CharField(max_length=50, blank=False)
     platelets = models.CharField(max_length=50, blank=False)
     esr = models.CharField(max_length=50, blank=False)
+
+    def __str__(self):
+        return self.user
