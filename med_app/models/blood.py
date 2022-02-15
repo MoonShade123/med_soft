@@ -15,4 +15,4 @@ class Blood(models.Model):
     esr = models.CharField(max_length=50, blank=False)
 
     def __str__(self):
-        return self.user
+        return self.user.username
